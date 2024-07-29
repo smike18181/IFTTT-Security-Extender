@@ -14,6 +14,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
+import static org.jsoup.select.Selector.selectFirst;
 
 @Configuration
 public class DocumentsConfig {
@@ -80,6 +83,22 @@ public class DocumentsConfig {
         }
 
         logger.info("Caricamento completo degli applet: {} gruppi di elementi caricati", applets.size());
+        return applets;
+    }
+
+    @Bean(name = "appletsDetails")
+    public Map<String, Elements> AppletsDetails(){
+       Map<String, Elements> applets =
+               JSONParser.readElementsAndNameFromJson("details.json");
+
+       if(applets == null) {
+           logger.info("applets è nulla");
+           applets = JSONParser.readElementsFromJson("links.json","appletlinks");
+       }
+
+        logger.info("Caricamento completo degli applet: " +
+                "{} gruppi di elementi caricati", applets.size());
+
         return applets;
     }
 

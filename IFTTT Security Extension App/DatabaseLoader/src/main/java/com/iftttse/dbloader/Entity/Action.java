@@ -10,9 +10,29 @@ public class Action {
     private Long id;
 
     private String nome;
+    @Column(length = 1024)
     private String descrizione;
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "canale_id")
     private Servizio canale;
+
+    public Long getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Action{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", descrizione='" + descrizione + '\'' +
+                ", canale=" + canale +
+                '}';
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Servizio getCanale() {
         return canale;

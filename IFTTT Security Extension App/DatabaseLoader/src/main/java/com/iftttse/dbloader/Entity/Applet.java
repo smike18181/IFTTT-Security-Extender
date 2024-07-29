@@ -16,7 +16,7 @@ public class Applet {
     @OneToOne
     private Creatore creator;
     @OneToOne
-    private Trigger trigger;
+    private Triggers trigger;
     @OneToOne
     private Action action;
 
@@ -52,12 +52,12 @@ public class Applet {
         this.creator = creator;
     }
 
-    public Trigger getTrigger() {
+    public Triggers getTrigger() {
         return trigger;
     }
 
-    public void setTrigger(Trigger trigger) {
-        this.trigger = trigger;
+    public void setTrigger(Triggers triggers) {
+        this.trigger = triggers;
     }
 
     public Action getAction() {
@@ -74,6 +74,21 @@ public class Applet {
 
     public void setRequired_android_app(boolean required_android_app) {
         this.required_android_app = required_android_app;
+    }
+
+    @Override
+    public String toString() {
+        return "Applet{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", installs_count=" + installs_count +
+                ", num_services=" + num_services +
+                ", required_android_app=" + required_android_app +
+                ", required_ios_app=" + required_ios_app +
+                ", creator=" + creator +
+                ", trigger=" + trigger +
+                ", action=" + action +
+                '}';
     }
 
     public boolean isRequired_ios_app() {
