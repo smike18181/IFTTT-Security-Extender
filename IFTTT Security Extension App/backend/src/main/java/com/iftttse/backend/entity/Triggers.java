@@ -1,5 +1,5 @@
 package com.iftttse.backend.entity;
-
+import jakarta.persistence.*;
 @Entity
 public class Triggers {
 
@@ -55,4 +55,6 @@ public class Triggers {
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
     }
+
+
 }

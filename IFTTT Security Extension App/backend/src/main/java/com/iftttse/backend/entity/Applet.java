@@ -1,5 +1,6 @@
 package com.iftttse.backend.entity;
 
+import jakarta.persistence.*;
 @Entity
 public class Applet {
 
@@ -87,6 +88,14 @@ public class Applet {
                 ", trigger=" + trigger +
                 ", action=" + action +
                 '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public boolean isRequired_ios_app() {

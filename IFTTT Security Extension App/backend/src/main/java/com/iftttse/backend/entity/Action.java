@@ -1,5 +1,7 @@
 package com.iftttse.backend.entity;
 
+import jakarta.persistence.*;
+
 @Entity
 public class Action {
 

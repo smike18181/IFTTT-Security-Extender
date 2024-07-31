@@ -15,6 +15,7 @@ java {
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -23,6 +24,17 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'mysql:mysql-connector-java:8.0.33'
+    implementation 'org.pmml4s:pmml4s_2.12:0.9.12'
+    implementation 'org.jpmml:pmml-evaluator:1.5.7'
+    implementation 'org.jpmml:pmml-evaluator-extension:1.5.16'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
+    implementation 'com.sun.xml.bind:jaxb-impl:2.3.2'
+    implementation 'org.apache.lucene:lucene-core:8.11.0'
+    implementation 'org.apache.lucene:lucene-analyzers-common:8.11.0'
+    implementation 'org.json:json:20210307'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
 }
