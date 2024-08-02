@@ -1,3 +1,37 @@
+/* Stile per la barra di scorrimento per Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Larghezza della barra di scorrimento */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Sfondo trasparente */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7fff00; /* Verde pastello */
+  border-radius: 10px; /* Bordo arrotondato */
+  border: 3px solid #0d1117; /* Bordo esterno scuro */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6be000; /* Colore verde più scuro al passaggio del mouse */
+}
+
+/* Stile per la barra di scorrimento per Firefox */
+html {
+  scrollbar-width:auto;
+  scrollbar-color: #7fff00 #0d1117; /* Colori per la barra di scorrimento e sfondo */
+}
+
+html {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +39,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: system-ui;
+  background-color: #0d1117;
+  color: #c9d1d9;
 }
 
 code {
