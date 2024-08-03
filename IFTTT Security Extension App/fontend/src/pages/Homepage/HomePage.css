@@ -34,10 +34,10 @@
   .title-homepage {
     font-size: 3em;
     font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.75);
     margin-bottom: 20px;
     animation: fadeIn 2s ease-in-out;
-    color: #7fff00; /* Verde pastello */
+    color: #9ACD32; /* Verde pastello */
   }
   
   /* Animazione per il titolo */

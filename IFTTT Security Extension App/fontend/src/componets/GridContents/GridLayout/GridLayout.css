@@ -1,0 +1,35 @@
+/* src/components/GridLayout.css */
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 25px;
+    max-width: 1200px;
+    margin: 50px auto; 
+    padding: 0 20px; 
+    justify-content: center; /* Centra orizzontalmente gli item */
+    align-items: center; /* Centra verticalmente gli item */
+}
+
+.navigation-buttons {
+    width: 100%; /* Occupa tutta la larghezza disponibile */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra i pulsanti di navigazione */
+    padding: 20px;
+}
+
+.element-name {
+    font-weight: bold;
+    font-size: 1.5em; /* Aumenta la dimensione del testo */
+    color: #9ACD32; /* Colore verde pastello per coerenza */
+    text-align: center; /* Centra il testo */
+    margin: 10px 0; /* Spazio sopra e sotto il testo */
+}
+
+@media only screen and (max-width: 1000px) {
+    .gridContainer {
+        grid-template-columns: repeat(2, 1fr); /* Due colonne su schermi più piccoli */
+        gap: 20px;
+    }
+}

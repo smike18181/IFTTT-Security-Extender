@@ -1,0 +1,55 @@
+/* src/components/SearchBar.css */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #0b0c0e;
+  border: 1px solid #dddddd80;/* Colore del bordo verde pastello */
+  border-radius: 25px;
+  padding: 5px 10px;
+  width: 300px;
+  box-shadow: #9ACD32; /* Ombra più leggera */
+  transition: all 0.3s ease-in-out; /* Transizione più rapida */
+  margin: 40px auto; /* Centratura orizzontale */
+}
+
+.search-bar:hover {
+  box-shadow: 0 3px 6px #9ACD32; /* Ombra più chiara al passaggio del mouse */
+  border: 1px solid #9ACD32;
+  transform: scale(1.05);
+}
+
+.search-icon {
+  margin-right: 10px;
+  width: 25px; /* Imposta la larghezza dell'immagine */
+  height: 25px; /* Imposta l'altezza dell'immagine */
+  color: #FFFFFF; /* Colore dell'icona verde pastello */
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 5px;
+  font-size: 16px;
+  color: #FFFFFF; /* Colore del testo verde pastello */
+  background-color: transparent; /* Imposta lo sfondo del campo input come trasparente */
+  font-family: system-ui;
+  font-weight: bold;
+}
+
+.search-input::placeholder {
+  color: #dddddd59;/* Colore del placeholder verde pastello */
+}
+
+.clear-icon {
+  margin-left: 10px;
+  font-size: 20px;
+  color: #9ACD32; /* Colore dell'icona verde pastello */
+  cursor: pointer;
+}
+
+.clear-icon:hover {
+  color: #a0d6d6; 
+  transition: all 0.3s ease-in-out; /* Transizione più rapida */
+}

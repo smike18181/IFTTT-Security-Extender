@@ -1,95 +1,105 @@
 /* src/components/Footer.css */
 .footer {
-    background-color: #0b0c0e;
-    padding: 20px 0;
-    color: white;
-    font-family: 'Inter', sans-serif;
-  }
-  
+  background-color: #0b0c0e; /* Colore di sfondo scuro */
+  padding: 20px 0;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  position: relative; /* Assicurati che il footer sia posizionato correttamente */
+  bottom: 0; /* Fissa il footer in basso nella pagina */
+  width: 100%; /* Occupa tutta la larghezza della pagina */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  padding: 10px;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.footer-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.footer-app-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #9ACD32; /* Verde pastello */
+  margin-bottom: 20px;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin: 5px 0;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Transizione fluida per il colore del testo */
+}
+
+.footer-nav a:hover {
+  color: #9ACD32; /* Verde pastello al passaggio del mouse */
+  text-decoration: underline;
+}
+
+.footer-social {
+  margin-top: 10px;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #181c24;
+  font-size: 0.9em;
+}
+
+/* Stili per dispositivi mobili */
+@media (max-width: 768px) {
   .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+      flex-direction: column;
+      align-items: center;
   }
-  
+
   .footer-left,
   .footer-center,
   .footer-right {
-    flex: 1;
-    padding: 10px;
-  }
-  
-  .footer-logo {
-    height: 50px;
-    margin-bottom: 10px;
-  }
-  
-  .footer-name {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 5px 0;
-  }
-  
-  .footer-app-name {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #7fff00; /* Verde pastello */
-    margin-bottom: 20px;
-  }
-  
-  .footer-nav {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .footer-nav li {
-    margin: 5px 0;
-  }
-  
-  .footer-nav a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .footer-nav a:hover {
-    text-decoration: underline;
-  }
-  
-  .footer-social a {
-    margin: 0 10px;
-    display: inline-block;
-  }
-  
-  .footer-social img {
-    width: 24px;
-    height: 24px;
-  }
-  
-  .footer-bottom {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #181c24;
-    font-size: 0.9em;
-  }
-  
-  @media (max-width: 768px) {
-    .footer-container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footer-left,
-    .footer-center,
-    .footer-right {
       text-align: center;
       padding: 10px 0;
-    }
-  
-    .footer-social {
-      margin-top: 10px;
-    }
   }
-  
+
+  .footer-social {
+      margin-top: 10px;
+  }
+}

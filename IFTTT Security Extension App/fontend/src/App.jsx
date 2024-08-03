@@ -7,18 +7,21 @@ import HistoryPage from './pages/HystoryPage/HystoryPage.jsx';
 import AppletsPage from './pages/AppletsPage/AppletsPage.jsx';
 import PredictionPage from './pages/PredictionPage/PredictionPage.jsx';
 import Layout from './componets/Layout/Layout.jsx';
+import { ApiProvider } from './store/ApiContext.jsx';
 
 function App() {
   return (
     <Router>
        <Layout>
-        <Routes>
+        <ApiProvider>
+         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/servizi" element={<ServicesPage />} />
-          <Route path="/hystory" element={<HistoryPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/history" element={<HistoryPage />} />
           <Route path="/applets" element={<AppletsPage />} />
           <Route path="/predizione" element={<PredictionPage />} />
         </Routes>
+       </ApiProvider>
       </Layout>
     </Router>
   );

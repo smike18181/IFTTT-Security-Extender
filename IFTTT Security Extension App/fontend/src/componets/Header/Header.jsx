@@ -20,11 +20,11 @@ const Header = () => {
       </button>
       <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
         <div className="nav-items">
-          <Link to="/hystory" className="nav-link">
+          <Link to="/history" className="nav-link">
             <img src="header/history.png" alt="History Icon" />
             History Prediction
           </Link>
-          <Link to="/servizi" className="nav-link">
+          <Link to="/services" className="nav-link">
             <img src="header/vehicle.png" alt="Services Icon" />
             Services
           </Link>

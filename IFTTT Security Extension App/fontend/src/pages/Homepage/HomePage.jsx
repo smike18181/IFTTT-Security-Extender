@@ -19,7 +19,7 @@ const HomePage = () => {
         Your browser does not support the video tag.
       </video>
       <div className="homepage-content">
-        <h1>Benvenuti in</h1>
+        <h1>Benvenuto in</h1>
         <label className='title-homepage'>IFTTT Security Extension</label>
         <p><Link to="/services">Espora i servizi disponibili sulla piattaforma IFTTT.</Link></p>
       </div>

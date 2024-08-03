@@ -1,0 +1,59 @@
+.pagination {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr)); /* Adatta automaticamente la larghezza delle colonne */
+  gap: 10px;
+  margin: 0 auto 30px; /* Centra orizzontalmente e aggiunge margine inferiore */
+  justify-content: center; /* Centra i bottoni */
+  max-width: 525px; /* Lunghezza massima della paginazione */
+  width: 100%; /* Adatta la larghezza fino alla larghezza massima */
+}
+
+.pagination-button {
+  display: flex;
+  color: #ddd; /* Colore del testo per i bottoni non selezionati */
+  width: 50px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #ddd; /* Colore dei bordi per i bottoni non selezionati */
+  background: #0b0c0e; /* Colore di sfondo per i bottoni non selezionati */
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px; /* Font più piccolo */
+  font-weight: 700;
+  line-height: 30px; /* Altezza della linea uguale all'altezza del bottone */
+  transition: all 0.2s ease-in-out; /* Transizione più rapida */
+}
+
+.pagination-button:hover {
+  box-shadow: 0 1px 3px #9ACD32; /* Colore di sfondo per i bottoni al passaggio del mouse */
+  color: #9ACD32; /* Colore del testo al passaggio del mouse */
+  transform: scale(1.1); /* Scala il bottone al passaggio del mouse */
+  border: 1px solid #9ACD32; /* Colore dei bordi per i bottoni non selezionati */
+}
+
+.selected-button {
+  background-color: #9ACD32; /* Colore di sfondo per i bottoni selezionati */
+  color: #FFF; 
+  border: 1px solid #9ACD32; /* Bordi del colore verde pastello */
+}
+
+.selected-button:hover{
+   box-shadow: none;
+   color: #ddd;
+}
+
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* Larghezza per i puntini di paginazione */
+  height: 40px; /* Altezza per i puntini di paginazione */
+  color: #ddd; /* Colore del testo dei puntini */
+  font-size: 14px; /* Font più piccolo */
+  font-weight: 700;
+  text-align: center;
+}

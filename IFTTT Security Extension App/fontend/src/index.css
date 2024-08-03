@@ -8,19 +8,19 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #7fff00; /* Verde pastello */
+  background-color: #9ACD32; /* Verde pastello */
   border-radius: 10px; /* Bordo arrotondato */
   border: 3px solid #0d1117; /* Bordo esterno scuro */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #6be000; /* Colore verde più scuro al passaggio del mouse */
+  background-color: #9ACD32; /* Colore verde più scuro al passaggio del mouse */
 }
 
 /* Stile per la barra di scorrimento per Firefox */
 html {
   scrollbar-width:auto;
-  scrollbar-color: #7fff00 #0d1117; /* Colori per la barra di scorrimento e sfondo */
+  scrollbar-color: #9ACD32 #0d1117; /* Colori per la barra di scorrimento e sfondo */
 }
 
 html {

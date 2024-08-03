@@ -1,61 +1,73 @@
 /* src/components/Layout.css */
 body {
-    margin: 0;
-    background-color: #0d1117;
-    color: #c9d1d9;
-  }
-  
-  .layout {
-    display: flex;
-    flex-direction: column;
-    min-height: 135vh;
-  }
-  
-  .layout-header {
-    background-color: #161b22;
-    padding: 20px;
-  }
-  
-  .layout-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .layout-header nav ul li {
-    margin: 0 10px;
-  }
-  
- a {
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: color 0.3s ease; /* Transizione del colore con durata di 0.3 secondi */
-    padding: 10px;
-    border-radius: 5px;
-  }
-
-a:hover{
-    color: #A8DADC;
+  margin: 0;
+  color: #c9d1d9;
+  font-family: 'Inter', sans-serif;
 }
 
- .bordered {
-    text-decoration: underline;
- }
-  
-  .layout-header nav ul li a:hover {
-    background-color: #30363d;
-  }
-  
-  .layout-content {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .layout-footer {
-    background-color: #161b22;
-    padding: 20px;
-    text-align: center;
-  }
-  
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-header {
+  background-color: #161b22;
+  padding: 20px;
+}
+
+.layout-header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.layout-header nav ul li {
+  margin: 0 10px;
+}
+
+a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+a:hover {
+  color: #9ACD32;
+}
+
+.bordered {
+  text-decoration: underline;
+}
+
+.layout-header nav ul li a:hover {
+  background-color: #30363d;
+}
+
+.layout-content {
+  flex: 1;
+  padding: 20px;
+  margin-bottom: 80px; /* Spazio aggiuntivo per evitare sovrapposizione con il footer */
+}
+
+.layout-footer {
+  background-color: #161b22;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+.layout-title {
+  color: #9ACD32;
+  text-align: center; /* Centrato orizzontalmente */
+  font-size: 3em; /* Dimensione del font abbastanza grande; puoi regolare come necessario */
+  font-weight: bold; /* Grassetto per dare più risalto */
+  margin: 20px 0; /* Spazio sopra e sotto il titolo */
+  animation: fadeIn 1s ease-in-out;
+}
+
