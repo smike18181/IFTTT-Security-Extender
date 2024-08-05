@@ -1,0 +1,152 @@
+/* src/components/SearchApplets.css */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Sfondo scuro per il pop-up */
+    z-index: 1000; /* Assicurati che l'overlay sia sopra tutto il contenuto */
+    display: flex;
+    align-items: center; /* Centra verticalmente il pop-up */
+    justify-content: center; /* Centra orizzontalmente il pop-up */
+    pointer-events: none; /* Disabilita gli eventi di puntamento sull'overlay */
+}
+
+.search-popup {
+    display: grid;
+    grid-template-rows: auto 1fr; /* La parte superiore (intestazione e input) e la parte inferiore (risultati) */
+    gap: 20px;
+    max-width: 105vw; /* Adatta la larghezza del pop-up al viewport */
+    max-height: 80vh; /* Evita che il pop-up sia troppo alto */
+    width: 700px; /* Larghezza fissa per il pop-up */
+    padding: 20px;
+    border-radius: 8px;
+    background: #333; /* Colore di sfondo scuro per il pop-up */
+    color: #fff; /* Testo bianco per contrastare con lo sfondo scuro */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow-y: auto; /* Abilita lo scroll interno se necessario */
+    z-index: 1001; /* Assicurati che il pop-up sia sopra l'overlay */
+    pointer-events: all; /* Abilita gli eventi di puntamento sul pop-up */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #ddd;
+    background-color: #9ACD32;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 1010; /* Assicurati che il bottone sia sopra il contenuto del pop-up */
+}
+
+.close-button:hover {
+    transform: scale(1.1);
+    background-color: #99cd326b;
+}
+
+.search-header {
+    display: flex;
+    justify-content: center; /* Centra orizzontalmente gli elementi */
+    align-items: center; /* Centra verticalmente gli elementi */
+    gap: 10px; /* Spazio tra il campo di testo e il pulsante */
+}
+
+h2 {
+    font-size: 2em;
+    color: #ddd; /* Colore del testo per l'intestazione */
+    margin: 0;
+    text-align: center; /* Centra l'intestazione */
+}
+
+.search-input2 {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #333; /* Colore di sfondo per l'input */
+    color: #fff; /* Colore del testo per l'input */
+    flex: 1; /* Permette al campo di testo di espandersi */
+    min-width: 0; /* Impedisce che l'input si restringa eccessivamente */
+    border: 2px solid #ddd;
+    transition: all 0.3s;
+}
+
+.search-input2:hover,
+.search-input2:focus {
+    border: 2px solid #9ACD32;
+    box-shadow: 0 1px 4px #9ACD32;
+}
+
+.search-button {
+    background-color: transparent;
+    border: 2px solid #ddd;
+    color: #ddd;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap; /* Impedisce che il testo del pulsante si spezzi */
+}
+
+.search-button:disabled {
+    background-color: #9e9e9e;
+    cursor: not-allowed;
+}
+
+.search-button:hover:not(:disabled) {
+    border: 2px solid #9ACD32;
+    box-shadow: 0 1px 4px #9ACD32;
+    color: #9ACD32;
+    transform: scale(1.05);
+}
+
+.error {
+    color: #f44336;
+    font-size: 14px;
+    text-align: center; /* Centra il testo degli errori */
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Due colonne per riga */
+    gap: 25px;
+    width: 100%; /* Assicura che il contenitore delle card occupi tutta la larghezza disponibile */
+}
+
+@media only screen and (max-width: 850px) {
+    .search-popup {
+        width: 65%; /* Adatta la larghezza su schermi più piccoli */
+        margin: 30px; /* Aggiungi margine ai bordi del pop-up */
+    }
+
+    .card-container {
+        display: grid; /* Assicurati che la griglia sia visualizzata */
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dimensioni fisse per le card con una sola colonna su schermi piccoli */
+        gap: 20px; /* Spazio tra le card */
+    }
+
+    .card-container .card {
+        width: 150px; /* Imposta una larghezza fissa per le card */
+        height: 200px; /* Imposta un'altezza fissa per le card (modifica se necessario) */
+    }
+}
+

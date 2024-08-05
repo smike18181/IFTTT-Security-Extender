@@ -1,0 +1,37 @@
+/* src/components/ElementPage/ElementPage.css */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+  }
+  
+  .service-info {
+    width: 100%;
+    max-width: 600px; /* Set the maximum width to 500px */
+    text-align: center; /* Center the text inside the box */
+    padding: 20px;
+    border-radius: 8px; /* Optional: add rounded corners */
+    margin-bottom: 20px; /* Space between the service-info and other content */
+  }
+  
+  .service-image {
+    width: 100%;
+    max-width: 200px; /* Set the maximum width for the image */
+    height: auto;
+    margin-bottom: 20px; /* Space below the image */
+  }
+  
+  h1 {
+    margin: 10px 0; /* Space above and below the heading */
+  }
+  
+  p {
+    margin: 10px 0; /* Space above and below the paragraph */
+    color: #666; /* Optional: set the text color */
+  }
+  

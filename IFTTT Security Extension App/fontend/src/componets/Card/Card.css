@@ -1,52 +1,122 @@
 /* src/components/Card.css */
 
 .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px; 
+    width: 100%;
+    min-height: 300px; /* Imposta un'altezza minima per la card */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra orizzontalmente il contenuto */
+    justify-content: center; /* Centra verticalmente il contenuto */
+    text-align: center;
+    background-color: #0b0c0e;
+}
+
+.card-applet {
     border: 2px solid #ddd;
     background-color: #0b0c0e;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 250px; /* Imposta un'altezza minima per la card */
+    min-height: 350px;
+    max-height: 500px;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left; /* Change text alignment to left */
+    padding: 15px;
+    position: relative; /* Add this line */
+  }
+  
+
+.card:hover,
+.card-applet:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px #9ACD32;
+    border: 2px solid #9ACD32;
+}
+
+.card-image {
+    width: 90px; /* Imposta una larghezza fissa per l'immagine */
+    height: 90px; /* Imposta un'altezza fissa per l'immagine */
+    object-fit: cover;
+    margin-bottom: 15px; /* Spazio sotto l'immagine */
+}
+
+.card-content {
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centra orizzontalmente il contenuto */
     justify-content: center; /* Centra verticalmente il contenuto */
-    text-align: center;
 }
-  
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px #9ACD32;
-    border: 2px solid #9ACD32;
-  }
-  
-  .card-image {
-    width: 90px; 
-    height: 90px;
-    object-fit: cover;  
-    margin-top: 15px; 
-    margin-bottom: 10px;
-  }
-  
-  .card-content {
-    padding: 15px;
+
+.card-content-applet {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Align items to the start (left) */
+    width: 100%;
   }
-  
-  .card-title {
+
+.card-title {
     font-size: 1.5em;
     margin: 0;
     color: #FFFFFF; /* Colore del titolo */
+}
+
+.card-description {
+    color: #555; /* Colore della descrizione */
+}
+
+.card-creator {
+    font-size: 0.9em;
+    color: #AAA;
+    position: absolute;
+    bottom: 80px; 
+    left: 15px;
+}
+
+.by{
+    font-weight: lighter;
+}
+  
+  .channels-img {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: 10px;
   }
   
-  /* Aggiungi uno stile per il caso in cui isService è false */
-  .card-alternate {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    background-color: #f9f9f9;
-    text-align: center;
+  .channel-card-image {
+    width: 30px; 
+    height: 30px;
+    object-fit: cover;  
+    margin-right: 5px;
+  }
+  
+  .card-installs {
+    display: flex;
+    align-items: center;
+    position: absolute; /* Add this line */
+    bottom: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+  }
+  
+  .user-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .installs-count {
+    font-size: 0.9em;
+    color: #AAA;
   }

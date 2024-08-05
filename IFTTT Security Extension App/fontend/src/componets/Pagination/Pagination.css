@@ -1,16 +1,16 @@
 .pagination {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30px, 1fr)); /* Adatta automaticamente la larghezza delle colonne */
+  display: flex;
+  justify-content: center; /* Center the pagination buttons horizontally */
+  align-items: center; /* Center the pagination buttons vertically */
   gap: 10px;
-  margin: 0 auto 30px; /* Centra orizzontalmente e aggiunge margine inferiore */
-  justify-content: center; /* Centra i bottoni */
-  max-width: 525px; /* Lunghezza massima della paginazione */
-  width: 100%; /* Adatta la larghezza fino alla larghezza massima */
+  margin: 0 auto 30px; /* Center horizontally and add bottom margin */
+  max-width: 525px; /* Max width for pagination */
+  width: 100%; /* Adapt width up to the max width */
 }
 
 .pagination-button {
   display: flex;
-  color: #ddd; /* Colore del testo per i bottoni non selezionati */
+  color: #ddd; /* Text color for unselected buttons */
   width: 50px;
   height: 40px;
   padding: 0;
@@ -18,42 +18,42 @@
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  border: 1px solid #ddd; /* Colore dei bordi per i bottoni non selezionati */
-  background: #0b0c0e; /* Colore di sfondo per i bottoni non selezionati */
+  border: 1px solid #ddd; /* Border color for unselected buttons */
+  background: #0b0c0e; /* Background color for unselected buttons */
   text-align: center;
   font-family: Inter;
-  font-size: 14px; /* Font più piccolo */
+  font-size: 14px; /* Smaller font size */
   font-weight: 700;
-  line-height: 30px; /* Altezza della linea uguale all'altezza del bottone */
-  transition: all 0.2s ease-in-out; /* Transizione più rapida */
+  line-height: 30px; /* Line height same as button height */
+  transition: all 0.2s ease-in-out; /* Faster transition */
 }
 
 .pagination-button:hover {
-  box-shadow: 0 1px 3px #9ACD32; /* Colore di sfondo per i bottoni al passaggio del mouse */
-  color: #9ACD32; /* Colore del testo al passaggio del mouse */
-  transform: scale(1.1); /* Scala il bottone al passaggio del mouse */
-  border: 1px solid #9ACD32; /* Colore dei bordi per i bottoni non selezionati */
+  box-shadow: 0 1px 3px #9ACD32; /* Box shadow on hover */
+  color: #9ACD32; /* Text color on hover */
+  transform: scale(1.1); /* Scale button on hover */
+  border: 1px solid #9ACD32; /* Border color on hover */
 }
 
 .selected-button {
-  background-color: #9ACD32; /* Colore di sfondo per i bottoni selezionati */
-  color: #FFF; 
-  border: 1px solid #9ACD32; /* Bordi del colore verde pastello */
+  background-color: #9ACD32; /* Background color for selected buttons */
+  color: #FFF;
+  border: 1px solid #9ACD32; /* Border color for selected buttons */
 }
 
-.selected-button:hover{
-   box-shadow: none;
-   color: #ddd;
+.selected-button:hover {
+  box-shadow: none;
+  color: #ddd;
 }
 
 .pagination-dots {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px; /* Larghezza per i puntini di paginazione */
-  height: 40px; /* Altezza per i puntini di paginazione */
-  color: #ddd; /* Colore del testo dei puntini */
-  font-size: 14px; /* Font più piccolo */
+  width: 50px; /* Width for pagination dots */
+  height: 40px; /* Height for pagination dots */
+  color: #ddd; /* Text color for dots */
+  font-size: 14px; /* Smaller font size */
   font-weight: 700;
   text-align: center;
 }

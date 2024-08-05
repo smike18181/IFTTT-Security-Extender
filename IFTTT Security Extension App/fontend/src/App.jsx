@@ -13,7 +13,6 @@ function App() {
   return (
     <Router>
        <Layout>
-        <ApiProvider>
          <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
@@ -21,7 +20,6 @@ function App() {
           <Route path="/applets" element={<AppletsPage />} />
           <Route path="/predizione" element={<PredictionPage />} />
         </Routes>
-       </ApiProvider>
       </Layout>
     </Router>
   );

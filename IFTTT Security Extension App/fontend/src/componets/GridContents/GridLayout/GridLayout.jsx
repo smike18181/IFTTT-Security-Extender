@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import './GridLayout.css';
 import Pagination from "../../Pagination/Pagination";
 import SearchBar from "../../SearchBar/SearchBar";
@@ -9,16 +10,17 @@ const GridLayout = ({ isServices }) => {
   const { data, page, setPage, filteredElements, setFilteredElements, selectedElement, setSelectedElement } = useContext(ApiContext);
 
   const elements = data;
+
   const elementsPerPage = 12;
   const [startIndex, setStartIndex] = useState(0);
   const [currentElements, setCurrentElements] = useState([]);
 
-  // Aggiorna gli elementi filtrati ogni volta che i dati cambiano
+  const navigate = useNavigate();
+
   useEffect(() => {
     setFilteredElements(elements);
   }, [elements, setFilteredElements]);
 
-  // Aggiorna gli elementi correnti ogni volta che cambia la pagina o gli elementi filtrati
   useEffect(() => {
     const newStartIndex = page * elementsPerPage;
     setStartIndex(newStartIndex);
@@ -56,24 +58,33 @@ const GridLayout = ({ isServices }) => {
   };
 
   const handleElementClick = (element) => {
-    setSelectedElement(element);
+    if(isServices){
+        setPage(0);
+        navigate('/applets', { state: { element } });
+    }
   };
 
-  const handleCloseProductDetails = () => {
-    setSelectedElement(null);
-  };
 
   return (
     <div className="Layout">
       <SearchBar onSearch={handleSearch} />
 
+      {numberOfElements > elementsPerPage && (
+        <Pagination
+          handlePage={handlePage}
+          numberOfCards={numberOfElements}
+          elementsPerPage={elementsPerPage}
+          currentPage={page}
+        />
+      )}
+
       <div className="gridContainer">
         {currentElements.map((element, index) => (
           <Card
-            key={element.id || startIndex + index} // Assicurati che ogni card abbia una chiave unica
+            key={element.id || startIndex + index}
             element={element}
             isService={isServices}
-            onClick={() => handleElementClick(element)}
+            handleElementClick={() => handleElementClick(element)}
           />
         ))}
       </div>
@@ -86,6 +97,7 @@ const GridLayout = ({ isServices }) => {
           currentPage={page}
         />
       )}
+
     </div>
   );
 };

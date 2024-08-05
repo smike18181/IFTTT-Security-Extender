@@ -71,3 +71,12 @@ a:hover {
   animation: fadeIn 1s ease-in-out;
 }
 
+.layout-subtitle{
+  color: #9ACD32;
+  text-align: center; /* Centrato orizzontalmente */
+  font-size: 3em; /* Dimensione del font abbastanza grande; puoi regolare come necessario */
+  font-weight: bold; /* Grassetto per dare più risalto */
+  margin-top: 80px;
+  display: block;
+}
+

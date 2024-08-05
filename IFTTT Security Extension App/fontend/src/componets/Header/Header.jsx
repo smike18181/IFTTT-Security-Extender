@@ -2,11 +2,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import SearchApplets from '../../popups/SearchApplets/SearchApplets';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [onClose, setOnClose] = useState(true);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
+  const handleClosePopUp = (result) => setOnClose(result);
 
   return (
     <header className="header">
@@ -28,10 +32,13 @@ const Header = () => {
             <img src="header/vehicle.png" alt="Services Icon" />
             Services
           </Link>
-          <Link to="/applets" className="nav-link">
+          <Link className="nav-link" onClick={() => handleClosePopUp(false)}>
             <img src="header/chef.png" alt="Cerca Applets Icon" />
             Cerca Applets
           </Link>
+
+          <SearchApplets onClose={onClose} handleClosePopUp={handleClosePopUp}/>
+
         </div>
       </nav>
     </header>
