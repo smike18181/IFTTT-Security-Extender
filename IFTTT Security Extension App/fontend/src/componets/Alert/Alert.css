@@ -1,0 +1,28 @@
+/* src/components/Alert.css */
+.alert {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px); /* Inizialmente nascosto sopra lo schermo */
+    background-color: #f44336; 
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 2000; 
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+  }
+  
+  /* Migliora l'animazione per quando l'alert è visibile */
+  .alert.show {
+    transform: translateX(-50%) translateY(0); /* Sposta l'alert in posizione visibile */
+    opacity: 1;
+  }
+  
+  /* Aggiungi un effetto di scorrimento per quando l'alert è nascosto */
+  .alert.hide {
+    transform: translateX(-50%) translateY(-100px); /* Sposta l'alert verso l'alto */
+    opacity: 0;
+  }
+  

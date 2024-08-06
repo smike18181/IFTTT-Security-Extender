@@ -57,10 +57,10 @@ const GridLayout = ({ isServices }) => {
     setPage(0);
   };
 
-  const handleElementClick = (element) => {
+  const handleElementClick = (e) => {
     if(isServices){
         setPage(0);
-        navigate('/applets', { state: { element } });
+        navigate('/applets', { state: { e } });
     }
   };
 

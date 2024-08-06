@@ -1,37 +1,32 @@
-// src/hooks/FetchData.js
 import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { ApiContext } from '../store/ApiContext';
 
-const FetchData = ({ endpoint, onDataLoaded, isSearchPopUp, isDetailsPopUp}) => {
-  const { setData, setDataPopUp, setPredict ,setLoading, setError } = useContext(ApiContext);
-
+const FetchData = ({ endpoint, onDataLoaded, isSearchPopUp, isDetailsPopUp }) => {
+  const { setData, setDataPopUp, setPredict, setLoading, setError } = useContext(ApiContext);
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       setError(null);
 
-      // Check if data is already in session storage
       const sessionData = sessionStorage.getItem(endpoint);
       if (sessionData) {
-
         try {
           const data = JSON.parse(sessionData);
-          console.log("sessione: {}",data);
+          console.log("sessione: {}", data);
           
-          if(!isSearchPopUp && !isDetailsPopUp){
-              setData(data);
-              console.log("data: {}", data);
-          }else if(isDetailsPopUp){
-              setPredict(data);
-              console.log("prediction: {}", data);
-          } else {
+          if (isDetailsPopUp) {
+            setPredict(data);
+            console.log("prediction: {}", data);
+          } else if (isSearchPopUp) {
             setDataPopUp(data);
-            console.log("dataPopUp: {}", data);
-        }
+          } else {
+            setData(data);
+          }
 
           if (onDataLoaded) onDataLoaded();
+
         } catch (err) {
           setError('Recupero dati dalla sessione fallito');
         } finally {
@@ -43,25 +38,22 @@ const FetchData = ({ endpoint, onDataLoaded, isSearchPopUp, isDetailsPopUp}) => 
       try {
         const response = await axios.get(`http://localhost:8080/${endpoint}`);
 
-        // Ensure response is JSON
         if (response.headers['content-type']?.includes('application/json')) {
+          const responseData = response.data;
+          console.log("API: {}", responseData);
 
-          console.log("API: {}",response.data);
-
-          if(!isSearchPopUp && !isDetailsPopUp){
-            setData(response.data);
-            console.log("data: {}", response.data);
-          }else if(isDetailsPopUp){
-            setPredict(response.data);
-            console.log("predizione: {}", response.data);
+          if (isDetailsPopUp) {
+            setPredict(responseData);
+            sessionStorage.setItem(endpoint, JSON.stringify(responseData));
+            console.log("prediction: {}", responseData);
+          } else if (isSearchPopUp) {
+            setDataPopUp(responseData);
+            console.log("dataPopUp: {}", responseData);
           } else {
-            setDataPopUp(response.data);
-            console.log("dataPopUp: {}", response.data);
+            setData(responseData);
+            console.log("data: {}", responseData);
           }
 
-
-          // Save the response data to session storage
-          if(!isSearchPopUp) sessionStorage.setItem(endpoint, JSON.stringify(response.data));
           if (onDataLoaded) onDataLoaded();
         } else {
           throw new Error('Unexpected content type: ' + response.headers['content-type']);
@@ -74,7 +66,7 @@ const FetchData = ({ endpoint, onDataLoaded, isSearchPopUp, isDetailsPopUp}) => 
     };
 
     fetchData();
-  }, [endpoint, setData, setDataPopUp ,setLoading, setError, onDataLoaded]);
+  }, [endpoint, setData, setDataPopUp, setLoading, setError, onDataLoaded, isDetailsPopUp, isSearchPopUp, setPredict]);
 
   return null;
 };

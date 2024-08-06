@@ -1,21 +1,34 @@
-// src/popups/DetailsApplet/DetailsApplet.jsx
 import React, { useState, useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './DetailsApplet.css';
 import { ApiContext } from '../../store/ApiContext';
 import FetchData from '../../hooks/FetchData';
 
 const DetailsApplet = ({ element, onClose }) => {
-    const { loading } = useContext(ApiContext);
+    const { loading, predict, setLoading } = useContext(ApiContext);
     const [endPoint, setEndPoint] = useState("");
+    const [dataLoaded, setDataLoaded] = useState(false); // Stato per monitorare il caricamento dei dati
+    const navigate = useNavigate();
 
     const handlePrediction = () => {
         const baseEndPoint = `api/predict/${element.id}`;
         setEndPoint(baseEndPoint);
     };
 
+    const handleDataLoaded = () => {
+        setDataLoaded(true);
+    };
+
+    useEffect(() => {
+        if (!loading && dataLoaded && predict !== null) {
+            navigate('/predizione', { state: { predict } });
+        }
+    }, [loading, dataLoaded, predict, navigate]);
+
     const handleClose = () => {
         if (onClose) {
             setEndPoint('');
+            setDataLoaded(false); // Resetta lo stato del caricamento dei dati
             onClose(false);
         }
     };
@@ -61,7 +74,7 @@ const DetailsApplet = ({ element, onClose }) => {
                         </div>
 
                         <div className="details-box">
-                        <h3 className="details-title" style={{ color: '#9ACD32'}}>Trigger & Action</h3><br></br>
+                            <h3 className="details-title" style={{ color: '#9ACD32'}}>Trigger & Action</h3><br />
                             <div className='trigger'>
                                 <img src={ChannelImgTrigger} alt="Trigger icon" className="icon" />
                                 <div className='text'>
@@ -79,18 +92,17 @@ const DetailsApplet = ({ element, onClose }) => {
                         </div>
                     </div>
 
-                  <div className='footer-popup'>
-                    <div className='prediction-container' onClick={handlePrediction}>
-                        {loading ? (
-                            <div className="loading"></div>
-                        ) : (
-                            <div>Predict</div>
-                        )}
-                    </div>
+                    <div className='footer-popup'>
+                        <div className='prediction-container' onClick={handlePrediction}>
+                            {loading ? (
+                                <div className="loading"></div>
+                            ) : (
+                                <div>Predict</div>
+                            )}
+                        </div>
                     </div>
 
-                    { endPoint && <FetchData endpoint={endPoint} isDetailsPopUp={true}/>}
-
+                    {endPoint && <FetchData endpoint={endPoint} isDetailsPopUp={true} onDataLoaded={handleDataLoaded} />}
                 </div>
             </div>
         </>

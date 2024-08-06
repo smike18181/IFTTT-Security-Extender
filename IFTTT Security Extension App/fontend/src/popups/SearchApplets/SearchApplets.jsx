@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ApiContext } from '../../store/ApiContext';
 import './SearchApplets.css'; 
 import Card from '../../componets/Card/Card';
@@ -7,7 +7,7 @@ import FetchData from '../../hooks/FetchData';
 const SearchApplets = ({ onClose, handleClosePopUp }) => {
   const [query, setQuery] = useState('');
   const [endpoint, setEndpoint] = useState('');
-  const { dataPopUp, setDataPopUp, loading, error, setError } = useContext(ApiContext);
+  const { dataPopUp, setDataPopUp, loading, setError} = useContext(ApiContext);
 
   const handleSearch = () => {
     if (!validateInput(query)) {
@@ -37,8 +37,8 @@ const SearchApplets = ({ onClose, handleClosePopUp }) => {
   return (
     !onClose && (
       <>
-        <div className="overlay">
-          <div className="search-popup">
+        <div className="overlay" onClick={handleClose}>
+          <div className={`search-popup ${!onClose ? 'show' : ''}`} onClick={(e) => e.stopPropagation()}>
             <button className="close-button" onClick={handleClose}>×</button>
             <h2>Cerca Applet</h2>
             <div className="search-header">
@@ -53,7 +53,6 @@ const SearchApplets = ({ onClose, handleClosePopUp }) => {
                 {loading ? 'Searching...' : 'Search'}
               </button>
             </div>
-            {error && <div className="error">{error}</div>}
             
             {endpoint && <FetchData endpoint={endpoint} isSearchPopUp={true} />} 
             

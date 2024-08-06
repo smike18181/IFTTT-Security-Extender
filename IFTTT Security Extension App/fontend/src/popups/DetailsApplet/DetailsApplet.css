@@ -1,3 +1,6 @@
+/* src/components/DetailsPopup.css */
+
+/* Overlay per disabilitare l'interazione con gli elementi sottostanti */
 .overlay {
     position: fixed;
     top: 0;
@@ -12,6 +15,7 @@
     pointer-events: auto;
 }
 
+/* Pop-up dettagli */
 .details-popup {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -56,7 +60,7 @@
 
 .parent-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns grid */
+    grid-template-columns: repeat(2, 1fr); /* 2 colonne per riga */
     gap: 20px;
     justify-content: center;
     padding: 20px;
@@ -182,8 +186,8 @@
 .footer-popup {
     width: 100%;
     display: flex;
-    align-items: center; /* Vertical center */
-    justify-content: center; /* Horizontal center */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra orizzontalmente */
 }
 
 .prediction-container {
@@ -220,7 +224,6 @@
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
 
 @media only screen and (max-width: 850px) {
     .details-popup {

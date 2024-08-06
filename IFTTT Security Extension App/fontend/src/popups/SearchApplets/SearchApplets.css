@@ -1,5 +1,6 @@
 /* src/components/SearchApplets.css */
 
+/* Overlay per disabilitare l'interazione con gli elementi sottostanti */
 .overlay {
     position: fixed;
     top: 0;
@@ -11,9 +12,10 @@
     display: flex;
     align-items: center; /* Centra verticalmente il pop-up */
     justify-content: center; /* Centra orizzontalmente il pop-up */
-    pointer-events: none; /* Disabilita gli eventi di puntamento sull'overlay */
+    pointer-events: auto; /* Consente gli eventi di puntamento sull'overlay */
 }
 
+/* Pop-up */
 .search-popup {
     display: grid;
     grid-template-rows: auto 1fr; /* La parte superiore (intestazione e input) e la parte inferiore (risultati) */
@@ -149,4 +151,3 @@ h2 {
         height: 200px; /* Imposta un'altezza fissa per le card (modifica se necessario) */
     }
 }
-

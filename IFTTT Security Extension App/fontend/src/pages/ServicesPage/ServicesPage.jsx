@@ -5,6 +5,7 @@ import FetchData from "../../hooks/FetchData";
 
 export default function ServicesPage() {
 
+  window.scrollTo(0, 0); // Scorri all'inizio della pagina
   const apiEndpoint = 'api/services';
   const title = 'Servizi partner';
 

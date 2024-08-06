@@ -1,6 +1,7 @@
 // src/contexts/ApiContext.js
 import React, { createContext, useState } from 'react';
 import axios from 'axios';
+import Alert from '../componets/Alert/Alert';
 
 const ApiContext = createContext();
 
@@ -13,6 +14,7 @@ const ApiProvider = ({ children }) => {
   const [page, setPage] = useState(0);
   const [filteredElements, setFilteredElements] = useState([]);
   const [selectedElement, setSelectedElement] = useState(null);
+  const [element, setElement] = useState(null);
 
   const fetchData = async ({ endPoint }) => {
     setLoading(true);
@@ -56,12 +58,17 @@ const ApiProvider = ({ children }) => {
     }
   };
 
+  const handleCloseAlert = () => {
+    setError(null); 
+  };
+
   return (
     <ApiContext.Provider value={{ 
-      data, setData, loading, setLoading, error, setError, fetchData, predict , setPredict,
+      data, setData ,element , setElement ,loading, setLoading, error, setError, fetchData, predict , setPredict,
       page, setPage, filteredElements, setFilteredElements, selectedElement, setSelectedElement, dataPopUp ,setDataPopUp
     }}>
       {children}
+      {error && <Alert message={error} onClose={handleCloseAlert} />} {/* Mostra l'alert se c'è un errore */}
     </ApiContext.Provider>
   );
 };

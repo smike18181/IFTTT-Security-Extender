@@ -18,8 +18,6 @@ const Footer = () => {
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/services">Servizi</Link></li>
                 <li><Link to="/history">Storico Predizioni</Link></li>
-                <li><Link to="/applets">Applets</Link></li>
-                <li><Link to="/predizione">Predizione</Link></li>
             </ul>
         </div>
         <div className="footer-right">

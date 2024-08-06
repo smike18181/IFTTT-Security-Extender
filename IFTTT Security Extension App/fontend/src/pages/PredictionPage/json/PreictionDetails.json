@@ -1,0 +1,27 @@
+{
+      "0": {
+        "nome": "Innocua",
+        "descrizione": "L'applet non rappresenta alcun pericolo o rischio per l'utente. Questi applet sono considerati sicuri poiché non influiscono negativamente né sui dati personali né sull'integrità dei dispositivi dell'utente.",
+        "esempio": "Un esempio di applet innocuo è quello che cambia automaticamente lo sfondo del telefono ogni giorno utilizzando una nuova immagine da una raccolta di foto. Questo tipo di applet non richiede accesso a dati sensibili né modifica impostazioni critiche del dispositivo, quindi non comporta rischi per la sicurezza o la privacy dell'utente.",
+        "image": "/json_image/innocuo.png"
+      },
+      "1": {
+        "nome": "Danni personali",
+        "descrizione": "L'applet può comportare la perdita o la compromissione di dati sensibili, esclusivamente a causa del comportamento dell'utente. In questo caso, il rischio è interno e legato a come l'utente configura e utilizza l'applet.",
+        "esempio": "Se un utente utilizza un applet che salva automaticamente tutte le foto scattate con il telefono su un servizio di cloud storage pubblico, e non imposta correttamente le autorizzazioni di privacy sul servizio cloud, potrebbe inavvertitamente esporre le sue foto personali a terzi non autorizzati. La sicurezza dei dati è dunque compromessa non dall'applet stesso, ma dall'uso inappropriato da parte dell'utente.",
+        "image": "/json_image/personal.png"
+      },
+      "2": {
+        "nome": "Danni fisici",
+        "descrizione": "L'applet può causare danni fisici o a beni, con il rischio che è esterno, ossia inflitto da terze parti. Gli applet di questa categoria possono interagire con dispositivi o ambienti fisici, creando potenziali rischi di sicurezza.",
+        "esempio": "Un esempio è un applet che sblocca automaticamente la porta di casa dell'utente quando il suo telefono si connette alla rete Wi-Fi domestica. Se una terza parte riesce a imitare la connessione del telefono dell'utente, potrebbe ottenere accesso non autorizzato alla casa, causando potenziali danni fisici o furti. Questo tipo di rischio è dovuto alla possibilità che terze parti malevole sfruttino la funzionalità dell'applet.",
+        "image": "/json_image/fisico.png"
+      },
+      "3": {
+        "nome": "Violazione della sicurezza informatica",
+        "descrizione": "L'applet può interrompere servizi online o distribuire malware, con il danno che è esterno. Gli applet di sicurezza informatica possono essere sfruttati da attori malintenzionati per attacchi informatici, mettendo a rischio la sicurezza delle informazioni e la continuità dei servizi.",
+        "esempio": "Un esempio di rischio in questa categoria è un applet che invia automaticamente email con allegati contenenti dati sensibili a un gruppo di contatti. Se l'applet viene compromesso, potrebbe essere utilizzato per distribuire malware o per inviare spam. Ciò può causare interruzioni nei servizi online e mettere a rischio la sicurezza delle informazioni, poiché il danno è inflitto da attori esterni che sfruttano la funzionalità dell'applet per scopi malevoli.",
+        "image": "/json_image/sicurezza.png"
+      }
+}
+  
