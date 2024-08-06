@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -32,5 +33,14 @@ public class AppletService {
         appletSet.addAll(appletsFromTriggers);
 
         return List.copyOf(appletSet); // Convertire di nuovo in List se necessario
+    }
+
+    public Applet getAppletsById(Long appletId) {
+
+        Optional<Applet> optional = appletRepository.findById(appletId);
+        if(optional.isPresent())
+            return optional.get();
+        return null;
+
     }
 }

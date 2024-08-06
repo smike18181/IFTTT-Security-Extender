@@ -102,7 +102,7 @@ const DetailsApplet = ({ element, onClose }) => {
                         </div>
                     </div>
 
-                    {endPoint && <FetchData endpoint={endPoint} isDetailsPopUp={true} onDataLoaded={handleDataLoaded} />}
+                    {endPoint && <FetchData endpoint={endPoint} isDetailsPopUp={true} applet={element} onDataLoaded={handleDataLoaded} />}
                 </div>
             </div>
         </>

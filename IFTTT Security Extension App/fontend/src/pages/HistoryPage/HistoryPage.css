@@ -1,0 +1,55 @@
+.history-page {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #222;
+    box-shadow: 0 0 10px 0 #99cd3236; /* Aggiungi un'ombra per un effetto di sollevamento */
+    border-radius: 20px;
+    margin: 0 10%;
+  }
+  
+  .results-table {
+    max-width: 700px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 10px 0 #333; /* Ombra della tabella */
+    border-radius: 8px; /* Arrotonda gli angoli della tabella */
+    overflow: hidden; /* Nasconde gli angoli arrotondati in caso di overflow */
+  }
+  
+  .results-table th, .results-table td {
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transizione per colore di sfondo e testo */
+  }
+  
+  .results-table th {
+    background-color: #99cd32; /* Colore di sfondo verde per l'intestazione */
+    box-shadow: 0 0px 8px 0 #99cd32; /* Ombra leggera per l'intestazione */
+    color: #dddddd;
+    font-weight: bold; /* Grassetto per i titoli */
+    text-align: center; /* Allinea il testo al centro */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transizione per colore di sfondo e ombra */
+  }
+  
+  .results-table tr:nth-child(even) {
+    background-color: #333; /* Colore di sfondo per righe pari */
+    transition: background-color 0.3s ease; /* Transizione per il colore di sfondo */
+  }
+  
+  .results-table td {
+    text-align: center; /* Allinea il testo al centro per le celle */
+  }
+  
+  /* Stili per la predizione */
+  .safe {
+    color: #4CAF50; /* Verde per valori innocui */
+  }
+  
+  .danger {
+    color: #F44336; /* Rosso per valori di pericolo */
+  }
+  

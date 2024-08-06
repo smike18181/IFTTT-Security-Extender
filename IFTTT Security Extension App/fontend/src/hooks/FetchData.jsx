@@ -2,7 +2,7 @@ import { useContext, useEffect } from 'react';
 import axios from 'axios';
 import { ApiContext } from '../store/ApiContext';
 
-const FetchData = ({ endpoint, onDataLoaded, isSearchPopUp, isDetailsPopUp }) => {
+const FetchData = ({ endpoint, onDataLoaded, isSearchPopUp, applet ,isDetailsPopUp }) => {
   const { setData, setDataPopUp, setPredict, setLoading, setError } = useContext(ApiContext);
 
   useEffect(() => {
@@ -10,15 +10,22 @@ const FetchData = ({ endpoint, onDataLoaded, isSearchPopUp, isDetailsPopUp }) =>
       setLoading(true);
       setError(null);
 
-      const sessionData = sessionStorage.getItem(endpoint);
+      // Funzione per ottenere l'item dalla sessione
+      const getSessionItem = (key) => {
+        const item = sessionStorage.getItem(key);
+        return item ? JSON.parse(item) : null;
+      };
+
+      // Recupera e stampa i dati dalla sessione
+      const sessionData = getSessionItem(endpoint);
       if (sessionData) {
         try {
-          const data = JSON.parse(sessionData);
-          console.log("sessione: {}", data);
+          const data = sessionData.data;
+          console.log("sessione: ", data);
           
           if (isDetailsPopUp) {
             setPredict(data);
-            console.log("prediction: {}", data);
+            console.log("prediction: ", data);
           } else if (isSearchPopUp) {
             setDataPopUp(data);
           } else {
@@ -40,11 +47,15 @@ const FetchData = ({ endpoint, onDataLoaded, isSearchPopUp, isDetailsPopUp }) =>
 
         if (response.headers['content-type']?.includes('application/json')) {
           const responseData = response.data;
-          console.log("API: {}", responseData);
+          console.log("API: ", responseData);
 
           if (isDetailsPopUp) {
             setPredict(responseData);
-            sessionStorage.setItem(endpoint, JSON.stringify(responseData));
+
+            // Salva un oggetto con applet.nome e responseData nella sessione
+            const dataToStore = { nome: applet.nome, data: responseData };
+
+            sessionStorage.setItem(endpoint, JSON.stringify(dataToStore));
             console.log("prediction: {}", responseData);
           } else if (isSearchPopUp) {
             setDataPopUp(responseData);

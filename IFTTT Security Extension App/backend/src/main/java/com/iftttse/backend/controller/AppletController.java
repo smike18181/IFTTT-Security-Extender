@@ -35,6 +35,14 @@ public class AppletController {
 
     }
 
+    @GetMapping("/{id}")
+    public Applet getAppletsById(@PathVariable Long id) {
+
+        if(id == null)   return null;
+        return appletService.getAppletsById(id);
+
+    }
+
 
 
 
